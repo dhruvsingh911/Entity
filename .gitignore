@@ -1,0 +1,23 @@
+# Environment secrets
+.env
+*.env
+
+# Node modules
+node_modules/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# VS Code
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Large AI datasets
+ENTITY/knowledge/knowledge.json
+ENTITY/knowledge/tool_examples.json
+ENTITY/knowledge/tools/tool-calling-english-100k.jsonl
+ENTITY/knowledge/raw/science-qa-sft-100k.jsonl

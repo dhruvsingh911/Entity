@@ -1,0 +1,963 @@
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Entity - Your Thinking Partner</title>
+
+    <!-- FONTS -->
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Libre+Baskerville:wght@400;700&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- GOOGLE MATERIAL ICONS -->
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,400,0,0"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/login.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- ========================================
+         NAVBAR
+    ========================================= -->
+
+    <header class="entity-navbar">
+
+        <a
+            href="/"
+            class="entity-brand"
+        >
+
+            <span class="entity-logo">
+                <span class="material-symbols-outlined">
+                    auto_awesome
+                </span>
+            </span>
+
+            <span>
+                Entity
+            </span>
+
+        </a>
+
+
+        <nav class="entity-nav-links">
+
+            <a href="#">
+                Meet Entity
+
+                <span class="nav-arrow material-symbols-outlined">
+                    keyboard_arrow_down
+                </span>
+            </a>
+
+
+            <a href="#">
+                Platform
+
+                <span class="nav-arrow material-symbols-outlined">
+                    keyboard_arrow_down
+                </span>
+            </a>
+
+
+            <a href="#">
+                Solutions
+
+                <span class="nav-arrow material-symbols-outlined">
+                    keyboard_arrow_down
+                </span>
+            </a>
+
+
+            <a href="#pricing">
+                Pricing
+            </a>
+
+
+            <a href="#resources">
+                Resources
+
+                <span class="nav-arrow material-symbols-outlined">
+                    keyboard_arrow_down
+                </span>
+            </a>
+
+        </nav>
+
+
+        <div class="entity-nav-actions">
+
+            <button
+                type="button"
+                class="contact-sales-btn"
+            >
+                Contact sales
+            </button>
+
+
+            <a
+                href="#login"
+                class="try-entity-btn"
+            >
+                Try Entity
+            </a>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ========================================
+         HERO SECTION
+    ========================================= -->
+
+    <main>
+
+
+        <section
+            class="entity-hero"
+            id="login"
+        >
+
+
+            <!-- LEFT SIDE -->
+
+            <div class="entity-hero-left">
+
+
+                <div class="hero-content">
+
+
+                    <h1>
+                        Questions, answered.
+                    </h1>
+
+
+                    <p class="hero-subtitle">
+                        Your intelligent thinking partner
+                        for ideas, answers, creativity,
+                        and big ambitions.
+                    </p>
+
+
+
+                    <!-- LOGIN BOX -->
+
+                    <div class="entity-login-box">
+
+
+                        <button
+                            type="button"
+                            class="google-login-btn"
+                            id="googleLoginBtn"
+                        >
+
+                            <!-- GOOGLE LOGO -->
+
+                            <svg
+                                class="google-logo"
+                                width="22"
+                                height="22"
+                                viewBox="0 0 24 24"
+                                aria-hidden="true"
+                            >
+
+                                <path
+                                    fill="#4285F4"
+                                    d="M21.35 12.27c0-.79-.07-1.55-.2-2.27H12v4.3h5.23a4.47 4.47 0 0 1-1.94 2.93v2.78h3.14c1.84-1.69 2.92-4.18 2.92-7.74z"
+                                />
+
+                                <path
+                                    fill="#34A853"
+                                    d="M12 21.75c2.62 0 4.82-.87 6.43-2.36l-3.14-2.78c-.87.58-1.99.92-3.29.92-2.53 0-4.67-1.71-5.44-4.01H3.31v2.87A9.72 9.72 0 0 0 12 21.75z"
+                                />
+
+                                <path
+                                    fill="#FBBC05"
+                                    d="M6.56 13.52A5.84 5.84 0 0 1 6.25 12c0-.53.09-1.04.31-1.52V7.61H3.31A9.75 9.75 0 0 0 2.25 12c0 1.57.38 3.06 1.06 4.39l3.25-2.87z"
+                                />
+
+                                <path
+                                    fill="#EA4335"
+                                    d="M12 6.47c1.43 0 2.71.49 3.72 1.45l2.79-2.79C16.81 3.54 14.62 2.25 12 2.25a9.72 9.72 0 0 0-8.69 5.36l3.25 2.87c.77-2.3 2.91-4.01 5.44-4.01z"
+                                />
+
+                            </svg>
+
+                            Continue with Google
+
+                        </button>
+
+
+
+                        <div class="login-divider">
+
+                            <span></span>
+
+                            <p>
+                                OR
+                            </p>
+
+                            <span></span>
+
+                        </div>
+
+
+
+                        <input
+                            type="email"
+                            id="loginEmail"
+                            placeholder="Enter your email"
+                            autocomplete="email"
+                        >
+
+
+
+                        <button
+                            type="button"
+                            class="email-login-btn"
+                            id="emailContinueBtn"
+                        >
+                            Continue with email
+                        </button>
+
+
+                        <p
+                            class="login-note"
+                            id="loginMessage"
+                        ></p>
+
+                    </div>
+
+
+
+                    <!-- DESKTOP APP -->
+
+                    <button
+                        type="button"
+                        class="desktop-download-btn"
+                    >
+
+                        <span class="material-symbols-outlined">
+                            desktop_windows
+                        </span>
+
+                        Download desktop app
+
+                    </button>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- RIGHT SIDE -->
+
+            <div class="entity-hero-right">
+
+                <!-- React AI Thinking Card -->
+                <div class="entity-visual entity-neural-visual">
+                    <div id="root"></div>
+                </div>
+
+            </div>
+
+
+
+        </section>
+
+
+
+        <!-- ========================================
+             PRICING
+        ========================================= -->
+
+        <section
+            class="pricing-section"
+            id="pricing"
+        >
+
+
+            <div class="section-heading">
+
+                <h2>
+                    Explore plans
+                </h2>
+
+                <p>
+                    Choose the Entity experience
+                    that works for you.
+                </p>
+
+            </div>
+
+
+
+            <div class="pricing-tabs">
+
+                <button class="active">
+                    Individual
+                </button>
+
+                <button>
+                    Team & Enterprise
+                </button>
+
+            </div>
+
+
+
+            <div class="pricing-grid">
+
+
+                <!-- FREE -->
+
+                <div class="plan-card">
+
+
+                    <div class="plan-icon">
+                        <span class="material-symbols-outlined">
+                            radio_button_unchecked
+                        </span>
+                    </div>
+
+
+                    <h3>
+                        Free
+                    </h3>
+
+
+                    <p class="plan-subtitle">
+                        Try Entity
+                    </p>
+
+
+                    <div class="plan-price">
+
+                        <strong>
+                            ₹0
+                        </strong>
+
+                        <span>
+                            Free for everyone
+                        </span>
+
+                    </div>
+
+
+                    <button class="plan-btn">
+                        Try Entity
+                    </button>
+
+
+                    <ul class="plan-features">
+
+                        <li>
+                            ✓ Chat with Entity AI
+                        </li>
+
+                        <li>
+                            ✓ Basic web answers
+                        </li>
+
+                        <li>
+                            ✓ Weather, news and information
+                        </li>
+
+                        <li>
+                            ✓ Multiple AI conversations
+                        </li>
+
+                        <li>
+                            ✓ Access to Entity models
+                        </li>
+
+                        <li>
+                            ✓ Chat history
+                        </li>
+
+                        <li>
+                            ✓ Basic file assistance
+                        </li>
+
+                    </ul>
+
+
+                </div>
+
+
+
+                <!-- PRO -->
+
+                <div class="plan-card featured">
+
+
+                    <div class="plan-icon">
+                        <span class="material-symbols-outlined">
+                            diamond
+                        </span>
+                    </div>
+
+
+                    <h3>
+                        Pro
+                    </h3>
+
+
+                    <p class="plan-subtitle">
+                        For everyday productivity
+                    </p>
+
+
+                    <div class="plan-price">
+
+                        <strong>
+                            ₹799
+                        </strong>
+
+                        <span>
+                            Per month
+                        </span>
+
+                    </div>
+
+
+                    <button class="plan-btn">
+                        Start Pro
+                    </button>
+
+
+                    <div class="plan-divider"></div>
+
+
+                    <p class="everything-text">
+                        Everything in Free, plus:
+                    </p>
+
+
+                    <ul class="plan-features">
+
+                        <li>
+                            ✓ More messages and usage
+                        </li>
+
+                        <li>
+                            ✓ Access to Entity Reason models
+                        </li>
+
+                        <li>
+                            ✓ Faster responses
+                        </li>
+
+                        <li>
+                            ✓ Longer conversations
+                        </li>
+
+                        <li>
+                            ✓ Advanced AI features
+                        </li>
+
+                        <li>
+                            ✓ Projects and organized chats
+                        </li>
+
+                        <li>
+                            ✓ Enhanced research tools
+                        </li>
+
+                    </ul>
+
+
+                </div>
+
+
+
+                <!-- MAX -->
+
+                <div class="plan-card max-plan">
+
+
+                    <div class="plan-icon">
+                        <span class="material-symbols-outlined">
+                            auto_awesome
+                        </span>
+                    </div>
+
+
+                    <h3>
+                        Max
+                    </h3>
+
+
+                    <p class="plan-subtitle">
+                        Maximum power for serious work
+                    </p>
+
+
+                    <div class="plan-price">
+
+                        <strong>
+                            ₹1,999
+                        </strong>
+
+                        <span>
+                            Per month
+                        </span>
+
+                    </div>
+
+
+                    <button class="plan-btn">
+                        Try Max
+                    </button>
+
+
+                    <div class="plan-divider"></div>
+
+
+                    <p class="everything-text">
+                        Everything in Pro, plus:
+                    </p>
+
+
+                    <ul class="plan-features">
+
+                        <li>
+                            ✓ Highest usage limits
+                        </li>
+
+                        <li>
+                            ✓ Priority access during busy times
+                        </li>
+
+                        <li>
+                            ✓ Best available Entity models
+                        </li>
+
+                        <li>
+                            ✓ Advanced reasoning
+                        </li>
+
+                        <li>
+                            ✓ Priority AI features
+                        </li>
+
+                    </ul>
+
+
+                </div>
+
+
+            </div>
+
+
+            <p class="pricing-note">
+
+                Prices may change as Entity evolves
+                and new AI capabilities are introduced.
+
+            </p>
+
+
+        </section>
+
+
+
+        <!-- ========================================
+             FOOTER
+        ========================================= -->
+
+        <footer
+            class="entity-footer"
+            id="resources"
+        >
+
+
+            <div class="footer-top">
+
+
+                <!-- BRAND -->
+
+                <div class="footer-brand">
+
+
+                    <div class="entity-brand footer-logo">
+
+                        <span class="entity-logo">
+
+                            <span class="material-symbols-outlined">
+                                auto_awesome
+                            </span>
+
+                        </span>
+
+
+                        <span>
+                            Entity
+                        </span>
+
+                    </div>
+
+
+                    <p>
+                        Your thinking partner for
+                        ideas, work and creativity.
+                    </p>
+
+
+                </div>
+
+
+
+                <!-- PRODUCTS -->
+
+                <div class="footer-column">
+
+
+                    <h4>
+                        Products
+                    </h4>
+
+
+                    <a href="#">
+                        Entity AI
+                    </a>
+
+                    <a href="#">
+                        Entity Code
+                    </a>
+
+                    <a href="#">
+                        Entity Projects
+                    </a>
+
+                    <a href="#">
+                        Entity Research
+                    </a>
+
+                    <a href="#">
+                        Download app
+                    </a>
+
+                    <a href="#">
+                        Pricing
+                    </a>
+
+                    <a href="#">
+                        Log in
+                    </a>
+
+
+                    <h4 class="footer-subheading">
+                        Features
+                    </h4>
+
+
+                    <a href="#">
+                        Web search
+                    </a>
+
+                    <a href="#">
+                        Weather
+                    </a>
+
+                    <a href="#">
+                        Movies
+                    </a>
+
+                    <a href="#">
+                        News
+                    </a>
+
+
+                    <h4 class="footer-subheading">
+                        Models
+                    </h4>
+
+
+                    <a href="#">
+                        Entity Reason 1.7B
+                    </a>
+
+                    <a href="#">
+                        Entity Reason 4B
+                    </a>
+
+                    <a href="#">
+                        Entity Reason 2.5 3B
+                    </a>
+
+
+                </div>
+
+
+
+                <!-- SOLUTIONS -->
+
+                <div class="footer-column">
+
+
+                    <h4>
+                        Solutions
+                    </h4>
+
+
+                    <a href="#">
+                        AI agents
+                    </a>
+
+                    <a href="#">
+                        Coding
+                    </a>
+
+                    <a href="#">
+                        Business
+                    </a>
+
+                    <a href="#">
+                        Customer support
+                    </a>
+
+                    <a href="#">
+                        Education
+                    </a>
+
+                    <a href="#">
+                        Small business
+                    </a>
+
+                    <a href="#">
+                        Startups
+                    </a>
+
+
+                    <h4 class="footer-subheading">
+                        Entity Platform
+                    </h4>
+
+
+                    <a href="#">
+                        Overview
+                    </a>
+
+                    <a href="#">
+                        Developer tools
+                    </a>
+
+                    <a href="#">
+                        API
+                    </a>
+
+                    <a href="#">
+                        Integrations
+                    </a>
+
+
+                </div>
+
+
+
+                <!-- RESOURCES -->
+
+                <div class="footer-column">
+
+
+                    <h4>
+                        Resources
+                    </h4>
+
+
+                    <a href="#">
+                        Blog
+                    </a>
+
+                    <a href="#">
+                        Community
+                    </a>
+
+                    <a href="#">
+                        Connectors
+                    </a>
+
+                    <a href="#">
+                        Tutorials
+                    </a>
+
+                    <a href="#">
+                        Use cases
+                    </a>
+
+                    <a href="#">
+                        Research
+                    </a>
+
+
+                    <h4 class="footer-subheading">
+                        Company
+                    </h4>
+
+
+                    <a href="#">
+                        About Entity
+                    </a>
+
+                    <a href="#">
+                        Careers
+                    </a>
+
+                    <a href="#">
+                        Entity news
+                    </a>
+
+                    <a href="#">
+                        Contact
+                    </a>
+
+
+                </div>
+
+
+
+                <!-- HELP -->
+
+                <div class="footer-column">
+
+
+                    <h4>
+                        Help and security
+                    </h4>
+
+
+                    <a href="#">
+                        Availability
+                    </a>
+
+                    <a href="#">
+                        Status
+                    </a>
+
+                    <a href="#">
+                        Support center
+                    </a>
+
+
+                    <h4 class="footer-subheading">
+                        Terms and policies
+                    </h4>
+
+
+                    <a href="#">
+                        Privacy policy
+                    </a>
+
+                    <a href="#">
+                        Terms of service
+                    </a>
+
+                    <a href="#">
+                        Data policy
+                    </a>
+
+                    <a href="#">
+                        Usage policy
+                    </a>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- FOOTER BOTTOM -->
+
+            <div class="footer-bottom">
+
+
+                <div>
+
+                    <h3>
+                        ENTITY
+                    </h3>
+
+                    <p>
+                        © 2026 ENTITY AI
+                    </p>
+
+                </div>
+
+
+                <div class="social-links">
+
+                    <a href="#">
+                        𝕏
+                    </a>
+
+                    <a href="#">
+                        ◎
+                    </a>
+
+                    <a href="#">
+                        in
+                    </a>
+
+                    <a href="#">
+                        ▶
+                    </a>
+
+                    <a href="#">
+                        ◎
+                    </a>
+
+                </div>
+
+
+            </div>
+
+
+        </footer>
+
+
+    </main>
+
+
+
+    <!-- JAVASCRIPT -->
+
+    <script
+        src="{{ url_for('static', filename='js/login.js') }}"
+    ></script>
+
+    <!-- VITE + REACT: AI Thinking Card -->
+    <script type="module" src="http://127.0.0.1:5173/@vite/client"></script>
+    <script type="module" src="http://127.0.0.1:5173/main.jsx"></script>
+
+
+</body>
+
+</html> 

@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Projects - ENTITY</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+</head>
+
+<body>
+
+<div id="projectsPage">
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside class="sidebar">
+
+        <div class="brand-row">
+
+            <div class="brand-mark">
+                E
+            </div>
+
+            <div class="brand-name">
+                ENTITY
+            </div>
+
+        </div>
+
+
+        <div class="mode-switch">
+
+            <button
+                class="mode-button active"
+                type="button"
+                onclick="window.location.href='/'"
+            >
+                <span class="mode-icon">⌘</span>
+                CoWork
+            </button>
+
+            <button
+                class="mode-button"
+                type="button"
+                onclick="window.location.href='/code'"
+            >
+                <span class="mode-icon">&lt;/&gt;</span>
+                Code
+            </button>
+
+        </div>
+
+
+        <button
+            class="new-button"
+            type="button"
+            onclick="window.location.href='/'"
+        >
+            <span class="new-plus">+</span>
+            <span>New</span>
+        </button>
+
+
+        <nav class="sidebar-nav">
+
+            <button
+                class="nav-item"
+                type="button"
+                onclick="window.location.href='/projects'"
+            >
+                <span class="nav-icon">▱</span>
+                <span>Projects</span>
+            </button>
+
+            <button
+                class="nav-item"
+                type="button"
+            >
+                <span class="nav-icon">♧</span>
+                <span>Artifacts</span>
+            </button>
+
+            <button
+                class="nav-item"
+                type="button"
+            >
+                <span class="nav-icon">◷</span>
+                <span>Scheduled</span>
+            </button>
+
+            <button
+                class="nav-item"
+                type="button"
+                onclick="window.location.href='/customize'"
+            >
+                <span class="nav-icon">▱</span>
+                <span>Customize</span>
+            </button>
+
+        </nav>
+
+
+        <div class="sidebar-section">
+
+            <div class="section-heading">
+
+                <span>
+                    Chats and tasks
+                </span>
+
+                <span class="section-filter">
+                    ♧
+                </span>
+
+            </div>
+
+
+            <button
+                class="task-item"
+                type="button"
+                onclick="window.location.href='/'"
+            >
+                <span class="task-dot"></span>
+                Casual greeting
+            </button>
+
+        </div>
+
+
+        <div class="sidebar-bottom">
+
+            <button
+                class="profile-button"
+                type="button"
+            >
+
+                <span class="profile-avatar">
+                    DS
+                </span>
+
+                <span class="profile-details">
+
+                    <span class="profile-name">
+                        Dhruv Singh
+                    </span>
+
+                    <span class="profile-plan">
+                        Free
+                    </span>
+
+                </span>
+
+                <span class="profile-arrow">
+                    ⌄
+                </span>
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================================
+         PROJECT MAIN
+    ====================================================== -->
+
+    <main
+        class="main projects-main"
+    >
+
+        <!-- TOP -->
+
+        <header class="projects-header">
+
+            <h1>
+                Projects
+            </h1>
+
+
+            <div class="projects-actions">
+
+                <button
+                    id="projectSearchButton"
+                    class="projects-icon-button"
+                    type="button"
+                    aria-label="Search projects"
+                >
+                    ⌕
+                </button>
+
+
+                <button
+                    id="sortButton"
+                    class="sort-button"
+                    type="button"
+                >
+                    <span>
+                        Sort by Last updated
+                    </span>
+
+                    <span>
+                        ⌄
+                    </span>
+                </button>
+
+
+                <button
+                    id="newProjectButton"
+                    class="new-project-button"
+                    type="button"
+                >
+                    New project
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <!-- =================================================
+             EMPTY STATE
+        ================================================== -->
+
+        <section
+            id="projectsEmptyState"
+            class="projects-empty-state"
+        >
+
+            <div class="project-illustration">
+
+                <div class="project-shape project-shape-one"></div>
+
+                <div class="project-shape project-shape-two"></div>
+
+                <div class="project-shape project-shape-three"></div>
+
+                <div class="project-shape project-shape-four"></div>
+
+            </div>
+
+
+            <h2>
+                Looking to start a project?
+            </h2>
+
+
+            <p>
+                Upload materials, set custom instructions,
+                and organize conversations in one space.
+            </p>
+
+
+            <button
+                id="emptyNewProjectButton"
+                class="empty-new-project"
+                type="button"
+            >
+                New project
+            </button>
+
+        </section>
+
+
+        <!-- =================================================
+             PROJECT LIST
+        ================================================== -->
+
+        <section
+            id="projectList"
+            class="project-list hidden"
+        >
+            <!-- Generated by JS -->
+        </section>
+
+
+        <!-- =================================================
+             NEW PROJECT MODAL
+        ================================================== -->
+
+        <div
+            id="projectModal"
+            class="project-modal hidden"
+        >
+
+            <div class="project-modal-card">
+
+                <div class="project-modal-header">
+
+                    <div>
+                        <div class="project-modal-title">
+                            New project
+                        </div>
+
+                        <div class="project-modal-subtitle">
+                            Create a space for your conversations and materials.
+                        </div>
+                    </div>
+
+
+                    <button
+                        id="closeProjectModal"
+                        class="modal-close"
+                        type="button"
+                    >
+                        ×
+                    </button>
+
+                </div>
+
+
+                <label class="project-field">
+
+                    <span>
+                        Project name
+                    </span>
+
+                    <input
+                        id="projectNameInput"
+                        type="text"
+                        placeholder="e.g. My new project"
+                        autocomplete="off"
+                    >
+
+                </label>
+
+
+                <label class="project-field">
+
+                    <span>
+                        Description
+                    </span>
+
+                    <textarea
+                        id="projectDescriptionInput"
+                        rows="4"
+                        placeholder="What is this project about?"
+                    ></textarea>
+
+                </label>
+
+
+                <div class="project-modal-actions">
+
+                    <button
+                        id="cancelProjectButton"
+                        class="modal-cancel"
+                        type="button"
+                    >
+                        Cancel
+                    </button>
+
+
+                    <button
+                        id="createProjectButton"
+                        class="modal-create"
+                        type="button"
+                    >
+                        Create project
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             SORT MENU
+        ================================================== -->
+
+        <div
+            id="sortMenu"
+            class="project-sort-menu hidden"
+        >
+
+            <button
+                class="sort-option active"
+                type="button"
+                data-sort="updated"
+            >
+                Last updated
+                <span>✓</span>
+            </button>
+
+            <button
+                class="sort-option"
+                type="button"
+                data-sort="created"
+            >
+                Date created
+            </button>
+
+            <button
+                class="sort-option"
+                type="button"
+                data-sort="name"
+            >
+                Name
+            </button>
+
+        </div>
+
+
+        <!-- =================================================
+             SEARCH
+        ================================================== -->
+
+        <div
+            id="projectSearchBox"
+            class="project-search-box hidden"
+        >
+
+            <span>
+                ⌕
+            </span>
+
+            <input
+                id="projectSearchInput"
+                type="text"
+                placeholder="Search projects"
+                autocomplete="off"
+            >
+
+            <button
+                id="closeProjectSearch"
+                type="button"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <!-- =================================================
+             TOAST
+        ================================================== -->
+
+        <div
+            id="projectsToast"
+            class="toast hidden"
+        ></div>
+
+    </main>
+
+</div>
+
+
+<script>
+(() => {
+
+    "use strict";
+
+
+    const $ = id =>
+        document.getElementById(id);
+
+
+    const newProjectButton =
+        $("newProjectButton");
+
+    const emptyNewProjectButton =
+        $("emptyNewProjectButton");
+
+    const projectModal =
+        $("projectModal");
+
+    const closeProjectModal =
+        $("closeProjectModal");
+
+    const cancelProjectButton =
+        $("cancelProjectButton");
+
+    const createProjectButton =
+        $("createProjectButton");
+
+    const projectNameInput =
+        $("projectNameInput");
+
+    const projectDescriptionInput =
+        $("projectDescriptionInput");
+
+    const projectList =
+        $("projectList");
+
+    const emptyState =
+        $("projectsEmptyState");
+
+    const sortButton =
+        $("sortButton");
+
+    const sortMenu =
+        $("sortMenu");
+
+    const searchButton =
+        $("projectSearchButton");
+
+    const searchBox =
+        $("projectSearchBox");
+
+    const searchInput =
+        $("projectSearchInput");
+
+    const closeSearch =
+        $("closeProjectSearch");
+
+
+    let projects = [];
+
+    let currentSort = "updated";
+
+
+    /* =====================================================
+       TOAST
+    ====================================================== */
+
+    function toast(message) {
+
+        const element =
+            $("projectsToast");
+
+        if (!element) {
+            return;
+        }
+
+        element.textContent =
+            message;
+
+        element.classList.remove(
+            "hidden"
+        );
+
+        setTimeout(
+            () => {
+
+                element.classList.add(
+                    "hidden"
+                );
+
+            },
+            2200
+        );
+
+    }
+
+
+    /* =====================================================
+       MODAL
+    ====================================================== */
+
+    function openModal() {
+
+        projectModal
+            .classList
+            .remove("hidden");
+
+        setTimeout(
+            () => {
+
+                projectNameInput?.focus();
+
+            },
+            50
+        );
+
+    }
+
+
+    function closeModal() {
+
+        projectModal
+            .classList
+            .add("hidden");
+
+    }
+
+
+    newProjectButton
+        ?.addEventListener(
+            "click",
+            openModal
+        );
+
+
+    emptyNewProjectButton
+        ?.addEventListener(
+            "click",
+            openModal
+        );
+
+
+    closeProjectModal
+        ?.addEventListener(
+            "click",
+            closeModal
+        );
+
+
+    cancelProjectButton
+        ?.addEventListener(
+            "click",
+            closeModal
+        );
+
+
+    /* =====================================================
+       CREATE PROJECT
+    ====================================================== */
+
+    createProjectButton
+        ?.addEventListener(
+            "click",
+            async () => {
+
+                const name =
+                    projectNameInput
+                        .value
+                        .trim();
+
+                const description =
+                    projectDescriptionInput
+                        .value
+                        .trim();
+
+
+                if (!name) {
+
+                    toast(
+                        "Project name is required."
+                    );
+
+                    projectNameInput.focus();
+
+                    return;
+
+                }
+
+
+                createProjectButton.disabled =
+                    true;
+
+
+                try {
+
+                    const response =
+                        await fetch(
+                            "/api/projects",
+                            {
+                                method:
+                                    "POST",
+
+                                headers:
+                                    {
+                                        "Content-Type":
+                                            "application/json"
+                                    },
+
+                                body:
+                                    JSON.stringify(
+                                        {
+                                            name,
+                                            description
+                                        }
+                                    )
+                            }
+                        );
+
+
+                    const data =
+                        await response.json();
+
+
+                    if (!response.ok) {
+
+                        throw new Error(
+                            data.error ||
+                            "Could not create project."
+                        );
+
+                    }
+
+
+                    projects.push(
+                        data.project
+                    );
+
+
+                    renderProjects();
+
+
+                    closeModal();
+
+
+                    projectNameInput.value =
+                        "";
+
+                    projectDescriptionInput.value =
+                        "";
+
+
+                    toast(
+                        "Project created."
+                    );
+
+                } catch (error) {
+
+                    toast(
+                        error.message
+                    );
+
+                } finally {
+
+                    createProjectButton.disabled =
+                        false;
+
+                }
+
+            }
+        );
+
+
+    /* =====================================================
+       SORT
+    ====================================================== */
+
+    sortButton
+        ?.addEventListener(
+            "click",
+            event => {
+
+                event.stopPropagation();
+
+                sortMenu
+                    .classList
+                    .toggle(
+                        "hidden"
+                    );
+
+            }
+        );
+
+
+    document
+        .querySelectorAll(
+            ".sort-option"
+        )
+        .forEach(
+            option => {
+
+                option.addEventListener(
+                    "click",
+                    () => {
+
+                        currentSort =
+                            option.dataset.sort;
+
+                        document
+                            .querySelectorAll(
+                                ".sort-option"
+                            )
+                            .forEach(
+                                item => {
+
+                                    item.classList.toggle(
+                                        "active",
+                                        item === option
+                                    );
+
+                                }
+                            );
+
+
+                        sortMenu
+                            .classList
+                            .add(
+                                "hidden"
+                            );
+
+
+                        renderProjects();
+
+                    }
+                );
+
+            }
+        );
+
+
+    /* =====================================================
+       SEARCH
+    ====================================================== */
+
+    searchButton
+        ?.addEventListener(
+            "click",
+            () => {
+
+                searchBox
+                    .classList
+                    .remove(
+                        "hidden"
+                    );
+
+                searchInput.focus();
+
+            }
+        );
+
+
+    closeSearch
+        ?.addEventListener(
+            "click",
+            () => {
+
+                searchInput.value =
+                    "";
+
+                searchBox
+                    .classList
+                    .add(
+                        "hidden"
+                    );
+
+                renderProjects();
+
+            }
+        );
+
+
+    searchInput
+        ?.addEventListener(
+            "input",
+            renderProjects
+        );
+
+
+    /* =====================================================
+       RENDER
+    ====================================================== */
+
+    function renderProjects() {
+
+        if (!projects.length) {
+
+            emptyState
+                .classList
+                .remove(
+                    "hidden"
+                );
+
+            projectList
+                .classList
+                .add(
+                    "hidden"
+                );
+
+            return;
+
+        }
+
+
+        emptyState
+            .classList
+            .add(
+                "hidden"
+            );
+
+
+        projectList
+            .classList
+            .remove(
+                "hidden"
+            );
+
+
+        let filtered =
+            [...projects];
+
+
+        const query =
+            searchInput
+                ?.value
+                .trim()
+                .toLowerCase();
+
+
+        if (query) {
+
+            filtered =
+                filtered.filter(
+                    project =>
+                        project.name
+                            .toLowerCase()
+                            .includes(query)
+                );
+
+        }
+
+
+        filtered.sort(
+            (a, b) => {
+
+                if (
+                    currentSort ===
+                    "name"
+                ) {
+
+                    return a.name
+                        .localeCompare(
+                            b.name
+                        );
+
+                }
+
+
+                if (
+                    currentSort ===
+                    "created"
+                ) {
+
+                    return (
+                        new Date(
+                            b.created_at
+                        ) -
+                        new Date(
+                            a.created_at
+                        )
+                    );
+
+                }
+
+
+                return (
+                    new Date(
+                        b.created_at
+                    ) -
+                    new Date(
+                        a.created_at
+                    )
+                );
+
+            }
+        );
+
+
+        projectList.innerHTML =
+            "";
+
+
+        filtered.forEach(
+            project => {
+
+                const card =
+                    document.createElement(
+                        "article"
+                    );
+
+
+                card.className =
+                    "project-card";
+
+
+                card.innerHTML = `
+                    <div class="project-card-icon">
+                        ▱
+                    </div>
+
+                    <div class="project-card-content">
+                        <h3></h3>
+                        <p></p>
+                    </div>
+
+                    <button
+                        class="project-card-menu"
+                        type="button"
+                    >
+                        ···
+                    </button>
+                `;
+
+
+                card
+                    .querySelector("h3")
+                    .textContent =
+                    project.name;
+
+
+                card
+                    .querySelector("p")
+                    .textContent =
+                    project.description ||
+                    "No description";
+
+
+                projectList.appendChild(
+                    card
+                );
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       LOAD PROJECTS
+    ====================================================== */
+
+    async function loadProjects() {
+
+        try {
+
+            const response =
+                await fetch(
+                    "/api/projects"
+                );
+
+
+            if (!response.ok) {
+                return;
+            }
+
+
+            const data =
+                await response.json();
+
+
+            if (
+                Array.isArray(
+                    data.projects
+                )
+            ) {
+
+                projects =
+                    data.projects;
+
+            }
+
+
+            renderProjects();
+
+        } catch (error) {
+
+            console.error(
+                "Projects:",
+                error
+            );
+
+        }
+
+    }
+
+
+    /* =====================================================
+       OUTSIDE CLICK
+    ====================================================== */
+
+    document.addEventListener(
+        "click",
+        event => {
+
+            if (
+                !event.target.closest(
+                    "#sortButton"
+                ) &&
+                !event.target.closest(
+                    "#sortMenu"
+                )
+            ) {
+
+                sortMenu
+                    ?.classList
+                    .add(
+                        "hidden"
+                    );
+
+            }
+
+        }
+    );
+
+
+    /* =====================================================
+       ESC
+    ====================================================== */
+
+    document.addEventListener(
+        "keydown",
+        event => {
+
+            if (
+                event.key ===
+                "Escape"
+            ) {
+
+                closeModal();
+
+                sortMenu
+                    ?.classList
+                    .add(
+                        "hidden"
+                    );
+
+            }
+
+        }
+    );
+
+
+    /* =====================================================
+       START
+    ====================================================== */
+
+    loadProjects();
+
+})();
+</script>
+
+</body>
+</html>
