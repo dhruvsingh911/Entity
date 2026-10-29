@@ -29,6 +29,9 @@ jobs:
       - name: Install frontend dependencies
         run: npm install --no-audit --no-fund
 
+      - name: Install React Vite plugin required by ENTITY config
+        run: npm install --no-save @vitejs/plugin-react@5 --no-audit --no-fund
+
       - name: Build Vite frontend
         run: npx vite build ./ENTITY --base=/Entity/ --outDir ../dist
 
